@@ -1,0 +1,113 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 0.4fr 1.6fr;
+  grid-template-rows: 23% 76% 60% 50%;
+  grid-template-areas: "header header" "costado main" "section section" "footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: rgb(173, 148, 105);
+  display: inline-flex;
+  padding: 15px 50px;
+}
+header h1 {
+  text-align: center;
+  color: rgb(29, 29, 29);
+  font-size: 55px;
+  margin: 15px 350px;
+  text-decoration: underline;
+}
+header .logo {
+  width: 130px;
+  height: 100px;
+}
+
+.costado {
+  grid-area: costado;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.costado .preguntas {
+  height: 80px;
+  background-color: black;
+  padding: 15px;
+  transition-property: background-color, height;
+  transition-duration: 50ms;
+  transition-timing-function: linear;
+}
+.costado .preguntas h2 {
+  text-align: center;
+  color: whitesmoke;
+}
+.costado .preguntas:focus {
+  background-color: rgb(173, 148, 105);
+  height: 100%;
+  color: black;
+}
+
+main {
+  grid-area: main;
+  background-color: rgb(216, 204, 180);
+}
+
+section {
+  grid-area: section;
+  background-color: rgb(173, 160, 140);
+}
+section .container {
+  display: flex;
+  align-content: space-around;
+  padding: 0px 100px;
+  height: 330px;
+}
+section .container .caja {
+  width: 200px;
+  height: 200px;
+  margin: 60px auto;
+  box-shadow: 8px 8px 50px rgb(36, 36, 36);
+  background-image: radial-gradient(circle, rgb(216, 204, 180), rgb(173, 148, 105));
+  border-radius: 100%;
+  transition-property: width, height, box-shadow;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  border: 0cap;
+}
+section .container .caja img {
+  width: 85%;
+  height: 85%;
+  margin: 20px;
+  justify-content: center;
+}
+section .container .caja:hover {
+  width: 220px;
+  height: 220px;
+  box-shadow: 13px 13px 60px black;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(17, 17, 17);
+}
+footer .aprobacion {
+  width: 100%;
+  height: 70px;
+  background-color: gray;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .aprobacion .col {
+  align-content: center;
+  background-image: radial-gradient(circle, rgb(141, 141, 141), rgb(119, 119, 119));
+  padding: 11px 131px;
+  font-size: 19px;
+  border-right: 1px solid black;
+}
+
+/*# sourceMappingURL=practica.css.map */

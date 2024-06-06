@@ -1,0 +1,132 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+}
+@import 'variables';
+body
+{
+    display: grid;
+    grid-template-columns: 0.4fr 1.6fr;
+    grid-template-rows: 23% 76% 60% 50%;
+    grid-template-areas: 'header header'
+                         'costado main'
+                         'section section'
+                         'footer footer';
+}
+header
+{
+    grid-area: header;
+    background-color: $color_intenso ;
+    display: inline-flex;
+    padding: 15px 50px;
+    h1
+    {
+        text-align: center;
+        color: $letras_detalles;
+        font-size: 55px;
+        margin: 15px 350px;
+        text-decoration:underline;
+
+    }
+    .logo
+    {
+        width: 130px ;
+        height: 100px;
+    }
+}
+.costado
+{
+    grid-area: costado;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    .preguntas
+    {
+        height: 80px;
+        background-color: black;
+        padding: 15px;
+        transition-property: background-color, height;
+        transition-duration: 50ms;
+        transition-timing-function: linear;
+    h2 
+    {
+        text-align: center;
+        color: whitesmoke;
+    }
+    }
+    .preguntas:focus
+    {
+        background-color: $color_intenso;
+        height: 100%;
+        color: black;
+    }
+}
+main
+{
+    grid-area: main ;
+    background-color: $fondos;
+}
+section
+{
+    grid-area: section;
+    background-color: $color_general;
+    
+    .container
+    {
+        display: flex;
+        align-content: space-around;
+        padding: 0px 100px;
+        height: 330px;
+        
+        .caja
+        {
+            width: 200px;
+            height: 200px;
+            margin: 60px auto;
+            box-shadow: 8px 8px 50px rgb(36, 36, 36);
+            background-image: radial-gradient(circle, $fondos,$color_intenso);
+            border-radius: 100%;
+            transition-property: width, height, box-shadow;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+            border: 0cap;
+            img
+            {
+                width: 85%;
+                height: 85%;
+                margin: 20px;
+                justify-content: center;
+            }
+        }
+        .caja:hover
+        {
+            width: 220px;
+            height: 220px;
+            box-shadow: 13px 13px 60px black;
+        }
+    }
+}
+footer
+{
+    grid-area: footer;
+    background-color: rgb(17, 17, 17);
+
+    .aprobacion
+    {
+        width: 100%;
+        height: 70px;
+        background-color: gray;
+        display: flex;
+        flex-wrap: wrap;
+    
+        .col
+        {
+            align-content: center;
+            background-image: radial-gradient(circle, rgb(141, 141, 141), rgb(119, 119, 119));
+            padding: 11px 131px;
+            font-size: 19px;
+            border-right: 1px solid black;
+        }
+    }
+}
