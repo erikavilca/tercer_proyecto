@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hockeryzando-Productos</title>
+    <link rel="stylesheet" href="practica.css">
+</head>
+<body class="segundo">
+    <header >
+        <h1>Productos </h1>
+        <a class="volver-link" href="practica.html">
+        <div class="volver">Inicio</div>
+        </a>
+    </header>
+    <main>
+        <h2>Palos de hockey</h2>
+        <div class="container">
+            <div class="box-producto">
+                <img src="img/palo_kifaru_05.95.webp" alt="">
+                <h3></h3>
+            </div>
+            <div class="box-producto">
+                <img src="img/palo_negro.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/palo_rosita.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/palo_junior.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/palo_negro_celeste.webp" alt="">
+            </div>
+        </div>
+        
+        <h2>Bolsos</h2>
+        <div class="container">
+            <div class="box-producto">
+                <img src="img/bolso_celeste.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/bolso_negro.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/funda_verde.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/funda_violeta.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/funda_negra.webp" alt="">
+            </div>
+        </div>
+
+        <h2>Accesorios</h2>
+        <div class="container">
+            <div class="box-producto">
+                <img src="img/bocal.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/pelota_blanca.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/canillera_negro.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/canillera_celeste.webp" alt="">
+            </div>
+            <div class="box-producto">
+                <img src="img/guantes.webp" alt="">
+            </div>
+        </div>
+
+    </main>
+    <footer >
+        <p>footer</p>
+    </footer>
+    
+</body>
+</html>
+
+
+
+.segundo
+{
+font-family: sans-serif;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows:  80px auto 80px;
+grid-template-areas: 'header'
+                      'main'
+                      'footer';
+
+header
+{
+    grid-area: header;
+    background-color: $colorprincipal ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+    
+    .volver-link
+    {
+        text-decoration: none;
+        color: aliceblue;
+    .volver
+    {
+        padding: 8px 50px;
+    background-color: $color_intenso;
+    border-radius: 20px;
+    margin-right: 50px;
+    transition-duration: 1s;
+
+    }
+    .volver:hover
+    {
+        padding: 8px 55px ;
+        background-color: $color_medio;
+        box-shadow: 7px 7px 20px black ;
+        color: black;
+    }
+    }
+    h1 
+    {
+        margin-left: 60px;
+        font-size: 37px;
+        font-weight: 600;
+        text-shadow: 5px 5px 13px black;
+    }
+}
+main
+{
+    grid-area: main;
+    background-color: $colorsegundo;
+    padding: 18px;
+    h2
+    {
+        font-size: 25px;
+        color: white;
+        margin: 45px 0px 10px;
+        padding: 8px;
+        background-color: black;
+    }
+    .container
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0px 40px;
+
+    }
+    .box-producto
+    {
+        width: 180px;
+        height: 270px;
+        padding: 8px;
+        background-color: rgb(155, 155, 155);
+
+        
+    img
+    {
+        width: 180px;
+        height: 200px;
+        border-radius: 15px;
+    }
+    }
+}
+footer
+{
+    grid-area: footer;
+    background-color: $colorprincipal;
+}
+}

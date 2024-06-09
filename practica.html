@@ -10,11 +10,26 @@
     <meta property:"og:title" content="Productos de Hockey ">
     <meta property:"og:description" content="Aprovecha que estamos hasta con 32% de descuento. Los palos y bolsos de calidad.">
 </head>
-<body>
+<body class="primer">
     <header>
     <!--Va tener una barra donde podemos elegir las secciones de las paginas y se deriban entre ellas y un logo en la derecha-->
-        <h1>Hockerizando</h1>
-        <img class="logo" src="img/leonas.svg" alt="">
+    <div class="nav">
+        <h1 class="logo">Hockeryzando</h1>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a class="menu-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="menu-link" href="#">Contactos</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="menu-link" href="#">Sucursales</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="menu-link" href="#">ofertas</a>
+                </li>
+            </ul>
+    </div>
     </header>
     <!--aca van a tener recomendaciones (talles, ofertas del dia,etc.)-->
     <div class="costado">
@@ -43,14 +58,43 @@
         <!--Botones que me van a dirigir a otros html-->
         <div class="container">
             <button class="caja">
+            <a href="#">
                 <img src="img/palo.svg" alt="Palos de hockey">
+            </a>
             </button>
             <button class="caja">
+                <a href="#">
                 <img src="img/accesorio.svg" alt="Accesorios">
+                </a>
             </button>
-            <button class="caja">
+                <button class="caja">
+            <a href="#">
                 <img src="img/quienes-somos.svg" alt="Quienes somos">
+            </a>
             </button>
+        </div>
+        <!--Algunos palos o aacesorio de oferta-->
+        <div class="container-dos">
+            <div class="promo">
+                <img src="img/funda_rosa.webp" alt="Funda en promo">
+                <h3>Funda- Vlack</h3>
+                <p>$100.000</p>
+            </div>
+            <div class="promo">
+                <img src="img/canillera_rosa.jpg" alt="Canillera en promo">
+                <h3>Canillera- Vlack</h3>
+                <p>$10.000</p>
+            </div>
+            <div class="promo">
+                <img src="img/palo_junior.webp" alt="Palo en promo">
+                <h3>Palo Js- Vlack</h3>
+                <p>$40.000</p>
+            </div>
+            <div class="promo">
+                <img src="img/pleota_colores.webp" alt="Bocha de color en promo">
+                <h3>Bocha- Vlack</h3>
+                    <p>$2.000</p>
+            </div>
         </div>
     </section>
     <footer>   
@@ -60,15 +104,6 @@
             <div class="col"> Envios a todo el pais</div>
             <div class="col"> Compra 100% segura</div>
         </div> 
-        <div class="inf">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-
-            </ul>
-        </div>
     </footer>
 </body>
 </html>

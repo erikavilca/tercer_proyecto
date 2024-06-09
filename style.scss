@@ -4,35 +4,67 @@
     margin: 0%;
 }
 @import 'variables';
-body
+.primer
 {
     display: grid;
     grid-template-columns: 0.4fr 1.6fr;
-    grid-template-rows: 23% 76% 60% 50%;
+    grid-template-rows: 78px 420px auto 150px;
     grid-template-areas: 'header header'
                          'costado main'
                          'section section'
                          'footer footer';
-}
+
 header
 {
     grid-area: header;
-    background-color: $color_intenso ;
-    display: inline-flex;
-    padding: 15px 50px;
-    h1
-    {
-        text-align: center;
-        color: $letras_detalles;
-        font-size: 55px;
-        margin: 15px 350px;
-        text-decoration:underline;
+    background-color: $color_intenso;
+    position: fixed;
+    width: 100%;
+    left: 0;
 
+    .nav
+    {
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
     }
     .logo
     {
-        width: 130px ;
-        height: 100px;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 0px 40px;
+        line-height: 78px;
+        color: white;
+    }
+    
+    .nav-menu
+    {
+        display: flex;
+        margin-right:60px;
+        line-height: 78px;
+        list-style: none;
+    .nav-menu-item
+    {
+        font-size: 17px;
+        margin-right: 32px;
+    .menu-link
+    {
+        text-decoration: none;
+        color: white;
+        padding: 7px;
+        border-radius:12px;
+        font-weight: 500;
+        transition-duration: 0.7s;
+    }
+    .menu-link:hover
+    {
+        background-color: $color_medio;
+        color: black;
+        padding:9px 12px;
+        box-shadow: 7px 2px 40px rgb(59, 95, 100);
+
+    }
+    }
     }
 }
 .costado
@@ -57,7 +89,7 @@ header
     }
     .preguntas:focus
     {
-        background-color: $color_intenso;
+        background-color: $resaltador;
         height: 100%;
         color: black;
     }
@@ -65,7 +97,8 @@ header
 main
 {
     grid-area: main ;
-    background-color: $fondos;
+    background-image: url(img/vlack_carusel.jpeg);
+    background-size: cover;
 }
 section
 {
@@ -75,15 +108,13 @@ section
     .container
     {
         display: flex;
-        align-content: space-around;
-        padding: 0px 100px;
-        height: 330px;
-        
+        height: 360px;
+        justify-content: space-evenly;
         .caja
         {
             width: 200px;
             height: 200px;
-            margin: 60px auto;
+            margin: 75px 0px;
             box-shadow: 8px 8px 50px rgb(36, 36, 36);
             background-image: radial-gradient(circle, $fondos,$color_intenso);
             border-radius: 100%;
@@ -94,16 +125,43 @@ section
             img
             {
                 width: 85%;
-                height: 85%;
-                margin: 20px;
+                height: 100%;
+                line-height: 200px;
                 justify-content: center;
             }
         }
         .caja:hover
         {
-            width: 220px;
-            height: 220px;
-            box-shadow: 13px 13px 60px black;
+            width: 230px;
+            height: 230px;
+        }
+    }
+    .container-dos
+    {
+        background-color: $color_medio;
+        padding: 60px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .promo
+        {
+            color: rgb(3, 3, 3);
+            background-color: rgb(206, 206, 206);
+            text-align: center;
+            
+            p
+            {
+            padding: 3px;
+            margin: 10px;
+            background-color: black;
+            color: aliceblue;
+            }
+
+            img
+            {
+                width: 210px;
+                height: 240px;
+            }
         }
     }
 }
@@ -115,18 +173,123 @@ footer
     .aprobacion
     {
         width: 100%;
-        height: 70px;
-        background-color: gray;
+        height: 60px;
         display: flex;
-        flex-wrap: wrap;
-    
+        justify-content: space-evenly;
         .col
         {
+            width: 100%;
             align-content: center;
-            background-image: radial-gradient(circle, rgb(141, 141, 141), rgb(119, 119, 119));
-            padding: 11px 131px;
+            background-image: radial-gradient(circle, rgb(138, 138, 138), rgb(99, 99, 99)) ;
             font-size: 19px;
-            border-right: 1px solid black;
+            text-align: center;
         }
     }
 }
+}
+
+/*Mediequeri*/
+@media (min-width:480px) 
+{
+    body
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70px 420px auto auto auto;
+    grid-template-areas: 'header'
+                         'main'
+                         'section'
+                         'costado'
+                         'footer';
+}
+header
+{
+    .logo
+    {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0px 30px;
+        line-height: 70px;
+    }
+    .nav-menu
+    {
+        display: flex;
+        width: 100%;
+        height: 40px;
+        background-color: rgba(66, 66, 66, 0.616);
+        line-height: 40px;
+        justify-content: space-evenly;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        .nav-menu-item
+        {
+            font-size: 14px;
+        }
+    }
+}
+main
+{
+    background-image: url(img/majo.las_leonas.jpg);
+    background-position: -60px 0px;
+}
+section
+{
+    .container
+    {
+        display: block;
+        height: auto;
+        
+        .caja
+        {
+            width: 100%;
+            height: 140px;
+            border-radius: 10px;
+            margin:5px 0px;
+        }
+        .caja:hover
+        {
+            width: 100%;
+            height: 150px;
+        }
+    }
+    .container-dos
+    {
+        padding: 40px 20px;
+        .promo
+        {
+            margin-bottom: 8px;
+            img
+            {
+                width: 150px;
+                height: 200px;
+            }
+        }
+    }
+}
+.costado
+{
+    .preguntas
+    {
+        height: 50px;
+    h2 
+    {
+        font-size: 17px;
+    }
+    }
+}
+footer
+{
+    .aprobacion
+    {
+        .col
+        {
+            font-size: 14px;
+        }
+    }
+}
+}
+
+/*segundo html produtos*/
+
+

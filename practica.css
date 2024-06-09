@@ -3,38 +3,62 @@
   margin: 0%;
 }
 
-body {
+.primer {
   display: grid;
   grid-template-columns: 0.4fr 1.6fr;
-  grid-template-rows: 23% 76% 60% 50%;
+  grid-template-rows: 78px 420px auto 150px;
   grid-template-areas: "header header" "costado main" "section section" "footer footer";
 }
-
-header {
+.primer header {
   grid-area: header;
-  background-color: rgb(173, 148, 105);
-  display: inline-flex;
-  padding: 15px 50px;
+  background-color: rgb(30, 59, 73);
+  position: fixed;
+  width: 100%;
+  left: 0;
 }
-header h1 {
-  text-align: center;
-  color: rgb(29, 29, 29);
-  font-size: 55px;
-  margin: 15px 350px;
-  text-decoration: underline;
+.primer header .nav {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
 }
-header .logo {
-  width: 130px;
-  height: 100px;
+.primer header .logo {
+  font-size: 30px;
+  font-weight: 900;
+  padding: 0px 40px;
+  line-height: 78px;
+  color: white;
 }
-
-.costado {
+.primer header .nav-menu {
+  display: flex;
+  margin-right: 60px;
+  line-height: 78px;
+  list-style: none;
+}
+.primer header .nav-menu .nav-menu-item {
+  font-size: 17px;
+  margin-right: 32px;
+}
+.primer header .nav-menu .nav-menu-item .menu-link {
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition-duration: 0.7s;
+}
+.primer header .nav-menu .nav-menu-item .menu-link:hover {
+  background-color: rgb(56, 104, 116);
+  color: black;
+  padding: 9px 12px;
+  box-shadow: 7px 2px 40px rgb(59, 95, 100);
+}
+.primer .costado {
   grid-area: costado;
   background-color: black;
   display: flex;
   flex-direction: column;
 }
-.costado .preguntas {
+.primer .costado .preguntas {
   height: 80px;
   background-color: black;
   padding: 15px;
@@ -42,72 +66,157 @@ header .logo {
   transition-duration: 50ms;
   transition-timing-function: linear;
 }
-.costado .preguntas h2 {
+.primer .costado .preguntas h2 {
   text-align: center;
   color: whitesmoke;
 }
-.costado .preguntas:focus {
-  background-color: rgb(173, 148, 105);
+.primer .costado .preguntas:focus {
+  background-color: rgb(42, 105, 134);
   height: 100%;
   color: black;
 }
-
-main {
+.primer main {
   grid-area: main;
-  background-color: rgb(216, 204, 180);
+  background-image: url(img/vlack_carusel.jpeg);
+  background-size: cover;
 }
-
-section {
+.primer section {
   grid-area: section;
-  background-color: rgb(173, 160, 140);
+  background-color: rgb(71, 114, 124);
 }
-section .container {
+.primer section .container {
   display: flex;
-  align-content: space-around;
-  padding: 0px 100px;
-  height: 330px;
+  height: 360px;
+  justify-content: space-evenly;
 }
-section .container .caja {
+.primer section .container .caja {
   width: 200px;
   height: 200px;
-  margin: 60px auto;
+  margin: 75px 0px;
   box-shadow: 8px 8px 50px rgb(36, 36, 36);
-  background-image: radial-gradient(circle, rgb(216, 204, 180), rgb(173, 148, 105));
+  background-image: radial-gradient(circle, rgb(145, 203, 202), rgb(30, 59, 73));
   border-radius: 100%;
   transition-property: width, height, box-shadow;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
   border: 0cap;
 }
-section .container .caja img {
+.primer section .container .caja img {
   width: 85%;
-  height: 85%;
-  margin: 20px;
+  height: 100%;
+  line-height: 200px;
   justify-content: center;
 }
-section .container .caja:hover {
-  width: 220px;
-  height: 220px;
-  box-shadow: 13px 13px 60px black;
+.primer section .container .caja:hover {
+  width: 230px;
+  height: 230px;
 }
-
-footer {
+.primer section .container-dos {
+  background-color: rgb(56, 104, 116);
+  padding: 60px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.primer section .container-dos .promo {
+  color: rgb(3, 3, 3);
+  background-color: rgb(206, 206, 206);
+  text-align: center;
+}
+.primer section .container-dos .promo p {
+  padding: 3px;
+  margin: 10px;
+  background-color: black;
+  color: aliceblue;
+}
+.primer section .container-dos .promo img {
+  width: 210px;
+  height: 240px;
+}
+.primer footer {
   grid-area: footer;
   background-color: rgb(17, 17, 17);
 }
-footer .aprobacion {
+.primer footer .aprobacion {
   width: 100%;
-  height: 70px;
-  background-color: gray;
+  height: 60px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-footer .aprobacion .col {
+.primer footer .aprobacion .col {
+  width: 100%;
   align-content: center;
-  background-image: radial-gradient(circle, rgb(141, 141, 141), rgb(119, 119, 119));
-  padding: 11px 131px;
+  background-image: radial-gradient(circle, rgb(138, 138, 138), rgb(99, 99, 99));
   font-size: 19px;
-  border-right: 1px solid black;
+  text-align: center;
 }
+
+/*Mediequeri*/
+@media (max-width: 480px) {
+  body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70px 420px auto auto auto;
+    grid-template-areas: "header" "main" "section" "costado" "footer";
+  }
+  header .logo {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0px 30px;
+    line-height: 70px;
+  }
+  header .nav-menu {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(66, 66, 66, 0.616);
+    line-height: 40px;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    top: 70px;
+  }
+  header .nav-menu .nav-menu-item {
+    font-size: 14px;
+  }
+  main {
+    background-image: url(img/majo.las_leonas.jpg);
+    background-position: -60px 0px;
+  }
+  section .container {
+    display: block;
+    height: auto;
+  }
+  section .container .caja {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    margin: 5px 0px;
+  }
+  section .container .caja:hover {
+    width: 100%;
+    height: 150px;
+  }
+  section .container-dos {
+    padding: 40px 20px;
+  }
+  section .container-dos .promo {
+    margin-bottom: 8px;
+  }
+  section .container-dos .promo img {
+    width: 150px;
+    height: 200px;
+  }
+  .costado .preguntas {
+    height: 50px;
+  }
+  .costado .preguntas h2 {
+    font-size: 17px;
+  }
+  footer .aprobacion .col {
+    font-size: 14px;
+  }
+}
+/*segundo html produtos*/
 
 /*# sourceMappingURL=practica.css.map */
