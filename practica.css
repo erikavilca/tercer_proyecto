@@ -3,10 +3,11 @@
   margin: 0%;
 }
 
+/*primer html - inicio*/
 .primer {
   display: grid;
   grid-template-columns: 0.4fr 1.6fr;
-  grid-template-rows: 78px 420px auto 150px;
+  grid-template-rows: 78px 420px auto 200px;
   grid-template-areas: "header header" "costado main" "section section" "footer footer";
 }
 .primer header {
@@ -84,54 +85,69 @@
   grid-area: section;
   background-color: rgb(71, 114, 124);
 }
-.primer section .container {
-  display: flex;
-  height: 360px;
-  justify-content: space-evenly;
+.primer section h2 {
+  background-color: rgba(23, 23, 23, 0.936);
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  color: antiquewhite;
+  letter-spacing: 2px;
+  font-size: 33px;
+  animation-name: cartel;
+  animation-delay: color;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
-.primer section .container .caja {
-  width: 200px;
-  height: 200px;
-  margin: 75px 0px;
-  box-shadow: 8px 8px 50px rgb(36, 36, 36);
-  background-image: radial-gradient(circle, rgb(145, 203, 202), rgb(30, 59, 73));
-  border-radius: 100%;
-  transition-property: width, height, box-shadow;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
-  border: 0cap;
-}
-.primer section .container .caja img {
-  width: 85%;
-  height: 100%;
-  line-height: 200px;
-  justify-content: center;
-}
-.primer section .container .caja:hover {
-  width: 230px;
-  height: 230px;
+@keyframes cartel {
+  0% {
+    color: rgb(147, 19, 19);
+  }
+  10% {
+    color: rgb(173, 106, 28);
+  }
+  40% {
+    color: rgb(195, 198, 36);
+  }
+  70% {
+    color: rgb(75, 180, 23);
+  }
+  90% {
+    color: rgb(34, 119, 173);
+  }
+  100% {
+    color: rgb(86, 36, 178);
+  }
 }
 .primer section .container-dos {
   background-color: rgb(56, 104, 116);
-  padding: 60px 30px;
+  padding: 35px 30px 85px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .primer section .container-dos .promo {
   color: rgb(3, 3, 3);
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(159, 159, 159);
   text-align: center;
+  padding: 6px;
+  text-decoration: none;
+}
+.primer section .container-dos .promo span {
+  background-color: rgb(184, 77, 77);
+  padding: 3px 4px;
+  float: right;
 }
 .primer section .container-dos .promo p {
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
   background-color: black;
   color: aliceblue;
+  border-radius: 20px;
+  text-align: center;
 }
 .primer section .container-dos .promo img {
   width: 210px;
-  height: 240px;
+  height: 210px;
 }
 .primer footer {
   grid-area: footer;
@@ -150,73 +166,322 @@
   font-size: 19px;
   text-align: center;
 }
+.primer footer .container-footer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.primer footer .container-footer h4 {
+  font-size: 23px;
+  color: rgb(159, 159, 159);
+}
+.primer footer .container-footer .list-inf {
+  list-style: none;
+  color: rgb(159, 159, 159);
+}
 
-/*Mediequeri*/
+/*Mediaequeri primer*/
 @media (max-width: 480px) {
-  body {
+  .primer {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 70px 420px auto auto auto;
+    grid-template-rows: 70px 420px auto auto 200px;
     grid-template-areas: "header" "main" "section" "costado" "footer";
   }
-  header .logo {
+  .primer header .logo {
     font-size: 20px;
     font-weight: 500;
     padding: 0px 30px;
     line-height: 70px;
   }
-  header .nav-menu {
+  .primer header .nav-menu {
     display: flex;
     width: 100%;
     height: 40px;
     background-color: rgba(66, 66, 66, 0.616);
-    line-height: 40px;
+    line-height: 70px;
     justify-content: space-evenly;
     position: fixed;
     left: 0;
     top: 70px;
   }
-  header .nav-menu .nav-menu-item {
+  .primer header .nav-menu .nav-menu-item {
     font-size: 14px;
   }
-  main {
+  .primer main {
     background-image: url(img/majo.las_leonas.jpg);
     background-position: -60px 0px;
   }
-  section .container {
+  .primer section .container {
     display: block;
     height: auto;
   }
-  section .container .caja {
+  .primer section .container .caja {
     width: 100%;
     height: 140px;
     border-radius: 10px;
     margin: 5px 0px;
   }
-  section .container .caja:hover {
+  .primer section .container .caja:hover {
     width: 100%;
     height: 150px;
   }
-  section .container-dos {
+  .primer section .container-dos {
     padding: 40px 20px;
   }
-  section .container-dos .promo {
-    margin-bottom: 8px;
+  .primer section .container-dos .promo {
+    margin: 8px;
   }
-  section .container-dos .promo img {
-    width: 150px;
+  .primer section .container-dos .promo img {
+    width: 160px;
     height: 200px;
   }
-  .costado .preguntas {
+  .primer .costado .preguntas {
     height: 50px;
   }
-  .costado .preguntas h2 {
+  .primer .costado .preguntas h2 {
     font-size: 17px;
   }
-  footer .aprobacion .col {
+  .primer footer .aprobacion .col {
     font-size: 14px;
   }
 }
-/*segundo html produtos*/
+/*segundo html - produtos*/
+.segundo {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 270px auto 180px;
+  grid-template-areas: "header" "section" "main" "footer";
+}
+.segundo header {
+  grid-area: header;
+  background-color: rgb(16, 16, 16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(193, 193, 193);
+}
+.segundo header .volver-link {
+  text-decoration: none;
+  color: rgb(16, 16, 16);
+  font-weight: 600;
+}
+.segundo header .volver-link .volver {
+  padding: 8px 50px;
+  background-color: rgb(56, 104, 116);
+  box-shadow: 3px 2px 16px rgb(81, 83, 83);
+  border-radius: 20px;
+  margin-right: 80px;
+  transition-duration: 1s;
+}
+.segundo header .volver-link .volver:hover {
+  padding: 8px 55px;
+  background-color: rgb(71, 114, 124);
+  border: 1px solid rgb(116, 116, 116);
+}
+.segundo header h1 {
+  padding-left: 100px;
+  font-size: 37px;
+  font-weight: 600;
+}
+.segundo section {
+  grid-area: section;
+  background-color: rgb(30, 59, 73);
+}
+.segundo section .btn-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+.segundo section .btn-section .caja {
+  background-color: rgb(56, 104, 116);
+  width: 200px;
+  height: 200px;
+  margin-top: 33px;
+  box-shadow: 8px 8px 50px rgb(36, 36, 36);
+  border-radius: 100%;
+  transition-property: width, height, box-shadow;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  border: 0cap;
+}
+.segundo section .btn-section .caja img {
+  width: 85%;
+  height: 100%;
+  line-height: 200px;
+  justify-content: center;
+}
+.segundo section .btn-section .caja:hover {
+  width: 215px;
+  height: 215px;
+}
+.segundo main {
+  grid-area: main;
+  padding: 18px;
+  background-color: rgb(71, 114, 124);
+}
+.segundo main h2 {
+  font-size: 25px;
+  color: white;
+  margin: 45px 0px 10px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+.segundo main .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.segundo main .box-producto {
+  width: 175px;
+  height: 255px;
+  padding: 8px;
+  background-color: rgb(155, 155, 155);
+  text-decoration: none;
+  color: black;
+}
+.segundo main .box-producto img {
+  width: 175px;
+  height: 175px;
+  border-radius: 10px;
+}
+.segundo main .box-producto p {
+  padding: 5px;
+  margin: 10px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 20px;
+  text-align: center;
+}
+.segundo footer {
+  grid-area: footer;
+  background-color: rgb(16, 16, 16);
+  color: rgb(159, 159, 159);
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+.segundo footer h4 {
+  font-size: 23px;
+}
+.segundo footer .list-inf {
+  list-style: none;
+}
+
+/*Mediaqueri sedundo*/
+@media (max-width: 480px) {
+  .segundo {
+    grid-template-rows: 80px auto auto 180px;
+  }
+  .segundo header {
+    justify-content: center;
+  }
+  .segundo header .volver {
+    padding: 1px 5px;
+    box-shadow: 3px 2px 6px rgb(81, 83, 83);
+  }
+  .segundo header .volver:hover {
+    padding: 1px 1px;
+  }
+  .segundo header h1 {
+    margin-right: 10px;
+    font-size: 28px;
+  }
+  .segundo section .btn-section {
+    display: block;
+  }
+  .segundo section .btn-section .caja {
+    width: 100%;
+    height: 110px;
+    margin: auto;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  .segundo section .btn-section .caja:hover {
+    width: 100%;
+    height: 120px;
+  }
+  .segundo main {
+    padding: 13px;
+  }
+  .segundo main h2 {
+    font-size: 20px;
+    margin: 35px 0px 10px;
+  }
+  .segundo main .container {
+    display: block;
+  }
+  .segundo main .box-producto {
+    width: 95%;
+    height: 176px;
+    padding: 3px;
+    margin: 8px;
+    display: flex;
+  }
+  .segundo main .box-producto .text {
+    display: block;
+    padding: 30px;
+  }
+  .segundo main .box-producto .text img {
+    width: 160px;
+    height: 160px;
+  }
+  .segundo footer h4 {
+    font-size: 20px;
+  }
+}
+/*Tercer html- carrito*/
+.compra {
+  display: grid;
+  grid-template-columns: 18% 41% 41%;
+  grid-template-rows: 86px 420px 70px;
+  grid-template-areas: "header header header" "nav section section" "footer footer footer";
+}
+.compra header {
+  grid-area: header;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+}
+.compra header h1 {
+  text-align: center;
+  color: antiquewhite;
+}
+.compra header .btn-header .list-btn {
+  display: flex;
+  justify-content: first baseline;
+}
+.compra header .btn-header .list-btn .item-btn {
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  background-color: lightsalmon;
+  list-style: none;
+  margin: 20px;
+}
+.compra nav {
+  grid-area: nav;
+  background-color: rgb(56, 104, 116);
+}
+.compra section {
+  grid-area: section;
+  background-color: rgb(30, 59, 73);
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+.compra section .art-uno {
+  width: 48%;
+  height: 90%;
+  background-color: gray;
+}
+.compra section .art-dos {
+  width: 48%;
+  height: 90%;
+  background-color: gray;
+}
+.compra footer {
+  grid-area: footer;
+  background-color: rgb(22, 22, 22);
+}
 
 /*# sourceMappingURL=practica.css.map */
