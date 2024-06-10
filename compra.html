@@ -5,44 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="practica.css">
     <title>Carrito de compra</title>
+
+    <meta nome:"descripcion" content="Pago online en todos los prductos.">
+    <meta nome:"keywords" content="hockey,compra">
+    <meta property:"og:type" content="Hockerizando">
+    <meta property:"og:title" content="Carrito de compra">
+    <meta property:"og:description" content="Ultimo paso para finalizar la compra">
+    <meta property:"og:url" content="www.pago/hocheryzando.com">
 </head>
 <body class="compra">
     <!--El header va a tener botones donde va a poder ir a las otros html-->
     <header>
-        <h1>Realizar el pago</h1>
+        <h1>Hokeryzando</h1>
         <div class="btn-header">
             <ul class="list-btn">
+                <a class="btn" href="practica.html">
                 <li class="item-btn">Inicio</li>
-                <li class="item-btn">Productos</li>
+                </a>
+                <a class="btn" href="productos.html">
+                <li class="item-btn">Tienda</li>
+                </a>
             </ul>
         </div>
-        
     </header>
     <!--EL nav va a tener opciones de para en efectivo o trarjeta-->
     <nav>
         <div class="nav-box">
-            <ul>
-                <li>Soy miembro</li>
-                <li>Tranferencia/ Debito</li>
-                <li>Tarjeta de credito</li>
-                <li>tengo un cupon</li>
+            <ul class="nav-list">
+                <li class="item-nav">
+                    <h3>MIEMBROS</h3>
+                    <P>si ya sos parte tenes un 10% descuento</P>
+                </li>
+                <li class="item-nav">
+                    <h3>ENVIOS</h3>
+                    <P>Los envios tiene un recargo</P>
+                </li>
+                <li class="item-nav">
+                    <h3>Cupon</h3>
+                    <P>introduce el codigo</P>
+                    <form>
+                        <input type="text" maxlength="4">
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
     <!--Section va a tener formularios donde es para comprar-->
     <section>
-        <!--Si se para en efectivo/tranferencia va a completar este-->
-        <article class="art-uno">
-            <p>uno</p>
-        </article>
-        <!--si paga en cuotas es por aca -->
-        <article class="art-dos">
-            <p>dos</p>
-        </article>
+        <div class="container-pago">
+            <article class="art-uno">
+                <h2>Datos personales</h2>
+                <form >
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" placeholder="nombre">
+
+                    <label for="correo">Correo Electronico</label>
+                    <input type="correo" placeholder="correo">
+
+                    <label for="celular">Celular</label>
+                    <input type="text" maxlength="10" placeholder="celular">
+                
+                    <label for="retiro">Retiro mi compra en</label>
+                    <select>
+                        <option>Elegir</option>
+                        <option>Buenos Aires</option>
+                        <option>Capital federal</option>
+                    </select>
+                    <select>
+                        <option>Elegir</option>
+                        <option>Hurlingham</option>
+                        <option>San Miguel</option>
+                        <option>Caseros</option> 
+                        <option>Belgrano</option> 
+                        <option>Palermo</option> 
+                        <option>Devoto</option> 
+                        <option>San Isidro</option> 
+                    </select>
+                    
+                    <label for="calle">Envio</label>
+                    <input type="text" placeholder="Calle">
+
+                    <label for="codigo">Codigo postal</label>
+                    <input type="text" placeholder="Cod. postal">
+                </form>
+            </article>
+            <article class="art-dos">
+                <h2>Finalizacion de la compra</h2>
+                <form >
+                    <label for="Nombre">Nombre del titular</label>
+                    <input type="text" placeholder="nombre del titular">
+
+                    <label for="tarjeta">Numero de tarjeta</label>
+                    <input type="tarjeta">
+                    <select>
+                        <option>Elegir</option>
+                        <option>Visa</option>
+                        <option>Visa debito</option>
+                        <option>Cabel</option>
+                        <option>Mastercard</option>
+                    </select>
+                
+                    <label for="fecha">fecha de expiracion</label>
+                    <input type="month">
+
+                    <label for="cogigo">Codigo de seguridad</label>
+                    <input type="text" maxlength="3" placeholder="3 digitos">
+                    <br>
+                    <button class="btn-fin" > 
+                        <a class="btn" href="practica.html">finalizar</a> 
+                    </button>
+                </form>
+            </article>
+        </div>
     </section>
-    <!---->
-    <footer>
-        <p>footer</p>
-    </footer>
 </body>
 </html>

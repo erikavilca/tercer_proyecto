@@ -433,55 +433,199 @@
 /*Tercer html- carrito*/
 .compra {
   display: grid;
-  grid-template-columns: 18% 41% 41%;
-  grid-template-rows: 86px 420px 70px;
-  grid-template-areas: "header header header" "nav section section" "footer footer footer";
+  grid-template-columns: 18% 82%;
+  grid-template-rows: 110px 486px;
+  grid-template-areas: "header header" "nav section";
 }
 .compra header {
   grid-area: header;
-  background-color: rgb(20, 20, 20);
   display: flex;
+  justify-content: space-between;
+  background-color: rgb(27, 79, 81);
 }
 .compra header h1 {
-  text-align: center;
+  font-size: 40px;
+  padding-left: 40px;
+  line-height: 100px;
   color: antiquewhite;
+  text-shadow: 3px 3px 10px rgb(0, 0, 0);
+  animation-iteration-count: infinite;
+  animation-delay: color;
+  animation-duration: 10s;
+  animation-name: marca;
+}
+@keyframes marca {
+  0% {
+    color: rgb(147, 19, 19);
+  }
+  10% {
+    color: rgb(173, 106, 28);
+  }
+  40% {
+    color: rgb(195, 198, 36);
+  }
+  70% {
+    color: rgb(75, 180, 23);
+  }
+  90% {
+    color: rgb(34, 119, 173);
+  }
+  100% {
+    color: rgb(86, 36, 178);
+  }
 }
 .compra header .btn-header .list-btn {
   display: flex;
   justify-content: first baseline;
 }
 .compra header .btn-header .list-btn .item-btn {
-  padding: 5px;
-  width: 100px;
+  padding: 6px;
+  width: 160px;
+  color: antiquewhite;
+  background-color: rgb(71, 114, 124);
+  border-radius: 20px;
   text-align: center;
-  background-color: lightsalmon;
   list-style: none;
   margin: 20px;
+  transition-duration: 0.8s;
+}
+.compra header .btn-header .list-btn .item-btn:hover {
+  background-color: rgb(12, 12, 12);
+  width: 170px;
+}
+.compra header .btn-header .list-btn .btn {
+  text-decoration: none;
+  color: aliceblue;
 }
 .compra nav {
   grid-area: nav;
   background-color: rgb(56, 104, 116);
+  text-align: center;
+}
+.compra nav .nav-list .item-nav {
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+  padding: 27px 0px;
+  list-style: none;
+  background-color: rgba(10, 10, 10, 0.461);
+  border: 1px solid black;
 }
 .compra section {
   grid-area: section;
   background-color: rgb(30, 59, 73);
+  padding-top: 40px;
+}
+.compra section .container-pago {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 30px;
 }
-.compra section .art-uno {
-  width: 48%;
-  height: 90%;
-  background-color: gray;
+.compra section .container-pago .art-uno {
+  padding: 25px 40px;
+  background-color: rgb(56, 104, 116);
+  border-radius: 10px;
+  width: 300px;
+  height: 285px;
+  box-shadow: 4px 4px 20px black;
 }
-.compra section .art-dos {
-  width: 48%;
-  height: 90%;
-  background-color: gray;
+.compra section .container-pago .art-uno h2 {
+  text-align: center;
+  font-weight: 900;
 }
-.compra footer {
-  grid-area: footer;
-  background-color: rgb(22, 22, 22);
+.compra section .container-pago .art-uno label {
+  display: block;
+  padding: 2px;
+}
+.compra section .container-pago .art-dos {
+  padding: 25px 40px;
+  background-color: rgb(56, 104, 116);
+  border-radius: 10px;
+  width: 300px;
+  height: 285px;
+  box-shadow: 4px 4px 20px black;
+}
+.compra section .container-pago .art-dos h2 {
+  text-align: center;
+  font-weight: 900;
+}
+.compra section .container-pago .art-dos label {
+  display: block;
+  padding: 4px;
+}
+.compra section .container-pago .art-dos .btn-fin {
+  padding: 6px 40px;
+  margin: 20px 0px;
+  background-color: rgb(26, 26, 26);
+  color: azure;
+  box-shadow: 3px 3px 8px black;
+  border-radius: 20px;
+  transition-property: padding, box-shadow, background-color;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  border: none;
+}
+.compra section .container-pago .art-dos .btn-fin .btn {
+  text-decoration: none;
+  color: rgb(175, 175, 175);
+}
+.compra section .container-pago .art-dos .btn-fin:hover {
+  padding: 6px 35px;
+  box-shadow: 4px 4px 20px black;
+  background-color: rgb(71, 114, 124);
+}
+
+@media (max-width: 480px) {
+  .compra {
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto auto;
+    grid-template-areas: "header" "section" "nav";
+  }
+  .compra header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .compra header h1 {
+    font-size: 28px;
+    padding-left: 10px;
+    line-height: 80px;
+  }
+  .compra header .btn-header .list-btn {
+    display: block;
+    justify-content: none;
+  }
+  .compra header .btn-header .list-btn .item-btn {
+    padding: 2px;
+    width: 95px;
+    margin: 10px;
+  }
+  .compra nav .nav-list {
+    font-size: 16px;
+  }
+  .compra nav .nav-list .item-nav {
+    margin: 0px;
+    padding: 5px 0px;
+  }
+  .compra section {
+    padding-top: 0px;
+  }
+  .compra section .container-pago {
+    display: block;
+    justify-content: none;
+  }
+  .compra section .container-pago .art-uno {
+    padding: 0px;
+    border-radius: 0px;
+    width: 100%;
+    height: 315px;
+    box-shadow: none;
+  }
+  .compra section .container-pago .art-dos {
+    padding: 0px;
+    border-radius: 0px;
+    width: 100%;
+    height: 285px;
+    box-shadow: none;
+  }
 }
 
 /*# sourceMappingURL=practica.css.map */
