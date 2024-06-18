@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,49 +14,28 @@
     <meta property:"og:description" content="Ultimo paso para finalizar la compra">
     <meta property:"og:url" content="www.pago/hocheryzando.com">
 </head>
+
 <body class="compra">
     <!--El header va a tener botones donde va a poder ir a las otros html-->
     <header>
-        <h1>Hokeryzando</h1>
+        <h1>Hockeryzando</h1>
         <div class="btn-header">
             <ul class="list-btn">
                 <a class="btn" href="practica.html">
-                <li class="item-btn">Inicio</li>
+                    <li class="item-btn">Inicio</li>
                 </a>
                 <a class="btn" href="productos.html">
-                <li class="item-btn">Tienda</li>
+                    <li class="item-btn">Tienda</li>
                 </a>
             </ul>
         </div>
     </header>
-    <!--EL nav va a tener opciones de para en efectivo o trarjeta-->
-    <nav>
-        <div class="nav-box">
-            <ul class="nav-list">
-                <li class="item-nav">
-                    <h3>MIEMBROS</h3>
-                    <P>si ya sos parte tenes un 10% descuento</P>
-                </li>
-                <li class="item-nav">
-                    <h3>ENVIOS</h3>
-                    <P>Los envios tiene un recargo</P>
-                </li>
-                <li class="item-nav">
-                    <h3>Cupon</h3>
-                    <P>introduce el codigo</P>
-                    <form>
-                        <input type="text" maxlength="4">
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <!--Section va a tener formularios donde es para comprar-->
     <section>
         <div class="container-pago">
-            <article class="art-uno">
+            <article class="art-uno glow">
                 <h2>Datos personales</h2>
-                <form >
+                <form>
                     <label for="Nombre">Nombre</label>
                     <input type="text" placeholder="nombre">
 
@@ -64,7 +44,7 @@
 
                     <label for="celular">Celular</label>
                     <input type="text" maxlength="10" placeholder="celular">
-                
+
                     <label for="retiro">Retiro mi compra en</label>
                     <select>
                         <option>Elegir</option>
@@ -75,13 +55,13 @@
                         <option>Elegir</option>
                         <option>Hurlingham</option>
                         <option>San Miguel</option>
-                        <option>Caseros</option> 
-                        <option>Belgrano</option> 
-                        <option>Palermo</option> 
-                        <option>Devoto</option> 
-                        <option>San Isidro</option> 
+                        <option>Caseros</option>
+                        <option>Belgrano</option>
+                        <option>Palermo</option>
+                        <option>Devoto</option>
+                        <option>San Isidro</option>
                     </select>
-                    
+
                     <label for="calle">Envio</label>
                     <input type="text" placeholder="Calle">
 
@@ -91,7 +71,7 @@
             </article>
             <article class="art-dos">
                 <h2>Finalizacion de la compra</h2>
-                <form >
+                <form>
                     <label for="Nombre">Nombre del titular</label>
                     <input type="text" placeholder="nombre del titular">
 
@@ -104,19 +84,20 @@
                         <option>Cabel</option>
                         <option>Mastercard</option>
                     </select>
-                
+
                     <label for="fecha">fecha de expiracion</label>
                     <input type="month">
 
                     <label for="cogigo">Codigo de seguridad</label>
                     <input type="text" maxlength="3" placeholder="3 digitos">
                     <br>
-                    <button class="btn-fin" > 
-                        <a class="btn" href="practica.html">finalizar</a> 
+                    <button class="btn-fin">
+                        <a class="btn" href="practica.html">finalizar</a>
                     </button>
                 </form>
             </article>
         </div>
     </section>
 </body>
+
 </html>

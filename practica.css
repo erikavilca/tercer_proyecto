@@ -3,19 +3,21 @@
   margin: 0%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*primer html - inicio*/
 .primer {
+  background-color: rgba(31, 76, 88, 0.651);
   display: grid;
-  grid-template-columns: 0.4fr 1.6fr;
-  grid-template-rows: 78px 420px auto 200px;
-  grid-template-areas: "header header" "costado main" "section section" "footer footer";
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 80px 560px 450px 200px;
+  grid-template-areas: "header header" "main main" "costado section" "footer footer";
 }
 .primer header {
   grid-area: header;
   background-color: rgb(30, 59, 73);
-  position: fixed;
-  width: 100%;
-  left: 0;
 }
 .primer header .nav {
   display: flex;
@@ -25,8 +27,7 @@
 .primer header .logo {
   font-size: 30px;
   font-weight: 900;
-  padding: 0px 40px;
-  line-height: 78px;
+  padding: 16px 40px;
   color: white;
 }
 .primer header .nav-menu {
@@ -37,7 +38,7 @@
 }
 .primer header .nav-menu .nav-menu-item {
   font-size: 17px;
-  margin-right: 32px;
+  margin-left: 50px;
 }
 .primer header .nav-menu .nav-menu-item .menu-link {
   text-decoration: none;
@@ -78,16 +79,41 @@
 }
 .primer main {
   grid-area: main;
-  background-image: url(img/vlack_carusel.jpeg);
-  background-size: cover;
+  padding: 0px 80px;
+}
+.primer main .container-carusel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.primer main .container-carusel .carusel-foto {
+  display: flex;
+  animation: carusel-foto 40s infinite;
+}
+.primer main .container-carusel .carusel-foto img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@keyframes carusel-foto {
+  0% {
+    transform: translateX(0px);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .primer section {
   grid-area: section;
-  background-color: rgb(71, 114, 124);
 }
 .primer section h2 {
-  background-color: rgba(23, 23, 23, 0.936);
-  width: 100%;
+  background-color: rgb(24, 24, 24);
   padding: 6px;
   text-align: center;
   color: antiquewhite;
@@ -119,35 +145,51 @@
   }
 }
 .primer section .container-dos {
-  background-color: rgb(56, 104, 116);
-  padding: 35px 30px 85px;
+  padding: 50px 30px 85px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: rgba(31, 76, 88, 0.651);
 }
 .primer section .container-dos .promo {
-  color: rgb(3, 3, 3);
-  background-color: rgb(159, 159, 159);
-  text-align: center;
-  padding: 6px;
+  width: 195px;
+  height: 290px;
+  padding: 8px;
+  background-color: rgb(212, 212, 212);
   text-decoration: none;
-}
-.primer section .container-dos .promo span {
-  background-color: rgb(184, 77, 77);
-  padding: 3px 4px;
-  float: right;
-}
-.primer section .container-dos .promo p {
-  padding: 5px;
-  margin: 10px;
-  background-color: black;
-  color: aliceblue;
-  border-radius: 20px;
-  text-align: center;
+  color: black;
+  cursor: pointer;
+  transition: scale 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 .primer section .container-dos .promo img {
-  width: 210px;
-  height: 210px;
+  width: 195px;
+  height: 195px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.primer section .container-dos .promo h3 {
+  text-align: center;
+}
+.primer section .container-dos .promo span {
+  background-color: rgb(194, 43, 43);
+  padding: 1px 4px;
+}
+.primer section .container-dos .promo p {
+  width: 110px;
+  height: 22px;
+  margin: 13px auto;
+  padding-top: 4px;
+  text-align: center;
+  font-size: 14px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 30px;
+}
+.primer section .container-dos:has(.promo:hover) .promo:not(:hover) {
+  scale: 0.95;
+  opacity: 0.8;
+  background-color: rgb(141, 141, 141);
+  box-shadow: 1px 1px 30px rgb(20, 73, 134);
 }
 .primer footer {
   grid-area: footer;
@@ -173,11 +215,11 @@
 }
 .primer footer .container-footer h4 {
   font-size: 23px;
-  color: rgb(159, 159, 159);
+  color: rgb(212, 212, 212);
 }
 .primer footer .container-footer .list-inf {
   list-style: none;
-  color: rgb(159, 159, 159);
+  color: rgb(212, 212, 212);
 }
 
 /*Mediaequeri primer*/
@@ -185,32 +227,27 @@
   .primer {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 70px 420px auto auto 200px;
+    grid-template-rows: 125px auto auto auto 200px;
     grid-template-areas: "header" "main" "section" "costado" "footer";
   }
+  .primer header .nav {
+    display: block;
+  }
   .primer header .logo {
-    font-size: 20px;
-    font-weight: 500;
-    padding: 0px 30px;
-    line-height: 70px;
+    line-height: 50px;
+    text-align: center;
   }
   .primer header .nav-menu {
-    display: flex;
+    line-height: 30px;
+    background-color: grey;
+    padding: 8px 0px;
     width: 100%;
-    height: 40px;
-    background-color: rgba(66, 66, 66, 0.616);
-    line-height: 70px;
-    justify-content: space-evenly;
-    position: fixed;
-    left: 0;
-    top: 70px;
   }
   .primer header .nav-menu .nav-menu-item {
-    font-size: 14px;
+    margin-left: 30px;
   }
-  .primer main {
-    background-image: url(img/majo.las_leonas.jpg);
-    background-position: -60px 0px;
+  .primer header .nav-menu .nav-menu-item .menu-link {
+    padding: 10px;
   }
   .primer section .container {
     display: block;
@@ -227,14 +264,16 @@
     height: 150px;
   }
   .primer section .container-dos {
-    padding: 40px 20px;
+    padding: 38px 10px;
   }
   .primer section .container-dos .promo {
+    height: 250px;
+    width: 160px;
     margin: 8px;
   }
   .primer section .container-dos .promo img {
     width: 160px;
-    height: 200px;
+    height: 160px;
   }
   .primer .costado .preguntas {
     height: 50px;
@@ -242,8 +281,11 @@
   .primer .costado .preguntas h2 {
     font-size: 17px;
   }
+  .primer main {
+    padding: 0%;
+  }
   .primer footer .aprobacion .col {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 /*segundo html - produtos*/
@@ -251,7 +293,7 @@
   font-family: sans-serif;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 80px 270px auto 180px;
+  grid-template-rows: 80px 290px auto 180px;
   grid-template-areas: "header" "section" "main" "footer";
 }
 .segundo header {
@@ -287,22 +329,22 @@
 }
 .segundo section {
   grid-area: section;
-  background-color: rgb(30, 59, 73);
+  background-color: rgb(71, 114, 124);
 }
 .segundo section .btn-section {
   display: flex;
   justify-content: space-evenly;
 }
 .segundo section .btn-section .caja {
-  background-color: rgb(56, 104, 116);
-  width: 200px;
-  height: 200px;
+  background-color: rgba(31, 76, 88, 0.651);
+  width: 180px;
+  height: 180px;
   margin-top: 33px;
   box-shadow: 8px 8px 50px rgb(36, 36, 36);
   border-radius: 100%;
   transition-property: width, height, box-shadow;
   transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: linear;
   border: 0cap;
 }
 .segundo section .btn-section .caja img {
@@ -312,51 +354,64 @@
   justify-content: center;
 }
 .segundo section .btn-section .caja:hover {
-  width: 215px;
-  height: 215px;
+  width: 190px;
+  height: 190px;
 }
 .segundo main {
   grid-area: main;
-  padding: 18px;
-  background-color: rgb(71, 114, 124);
+  padding: 0px 70px 60px;
+  background-color: rgba(31, 76, 88, 0.651);
 }
 .segundo main h2 {
   font-size: 25px;
   color: white;
-  margin: 45px 0px 10px;
+  margin: 55px 0px 10px;
   padding: 8px;
-  background-color: rgba(0, 0, 0, 0.589);
+  background-color: rgba(0, 0, 0, 0.518);
 }
 .segundo main .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.segundo main .box-producto {
+.segundo main .container .box-producto {
   width: 175px;
   height: 255px;
   padding: 8px;
-  background-color: rgb(155, 155, 155);
-  text-decoration: none;
   color: black;
+  text-decoration: none;
+  background-color: rgb(212, 212, 212);
+  transition: scale 0.8s ease-in-out, opacity 0.8s ease-in-out, filter 0.8s ease-in-out;
 }
-.segundo main .box-producto img {
+.segundo main .container .box-producto img {
   width: 175px;
   height: 175px;
   border-radius: 10px;
 }
-.segundo main .box-producto p {
-  padding: 5px;
-  margin: 10px;
+.segundo main .container .box-producto h3 {
+  text-align: center;
+}
+.segundo main .container .box-producto p {
+  width: 110px;
+  height: 22px;
+  margin: 28px auto;
+  padding-top: 4px;
+  text-align: center;
+  font-size: 14px;
   background-color: black;
   color: aliceblue;
-  border-radius: 20px;
-  text-align: center;
+  border-radius: 30px;
+}
+.segundo main .container:has(.box-producto:hover) .box-producto:not(:hover) {
+  scale: 0.9;
+  opacity: 0.8;
+  filter: blur(1px);
+  box-shadow: 1px 1px 30px rgb(13, 63, 120);
 }
 .segundo footer {
   grid-area: footer;
   background-color: rgb(16, 16, 16);
-  color: rgb(159, 159, 159);
+  color: rgb(212, 212, 212);
   display: flex;
   justify-content: space-evenly;
   padding-top: 40px;
@@ -371,60 +426,76 @@
 /*Mediaqueri sedundo*/
 @media (max-width: 480px) {
   .segundo {
-    grid-template-rows: 80px auto auto 180px;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 110px 200px auto 180px;
+    grid-template-areas: "header" "section" "main" "footer";
   }
   .segundo header {
-    justify-content: center;
-  }
-  .segundo header .volver {
-    padding: 1px 5px;
-    box-shadow: 3px 2px 6px rgb(81, 83, 83);
-  }
-  .segundo header .volver:hover {
-    padding: 1px 1px;
-  }
-  .segundo header h1 {
-    margin-right: 10px;
-    font-size: 28px;
-  }
-  .segundo section .btn-section {
     display: block;
   }
+  .segundo header .volver-link {
+    font-weight: 600;
+  }
+  .segundo header .volver-link .volver {
+    padding: 7px;
+    width: 85px;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    margin-right: 0px;
+    transition-duration: 1s;
+  }
+  .segundo header .volver-link .volver:hover {
+    padding: 8px;
+    width: 90;
+  }
+  .segundo header h1 {
+    margin-top: 15px;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
   .segundo section .btn-section .caja {
-    width: 100%;
+    width: 110px;
     height: 110px;
-    margin: auto;
-    box-shadow: none;
-    border-radius: 0px;
+    margin-top: 40px;
   }
   .segundo section .btn-section .caja:hover {
-    width: 100%;
-    height: 120px;
+    width: 115px;
+    height: 115px;
   }
   .segundo main {
-    padding: 13px;
+    padding: 0px 10px 60px;
   }
   .segundo main h2 {
-    font-size: 20px;
-    margin: 35px 0px 10px;
+    font-size: 25px;
+    color: white;
+    margin: 55px 0px 10px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.518);
   }
   .segundo main .container {
     display: block;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
-  .segundo main .box-producto {
+  .segundo main .container .box-producto {
     width: 95%;
-    height: 176px;
-    padding: 3px;
-    margin: 8px;
+    height: auto;
     display: flex;
+    margin-bottom: 10px;
   }
-  .segundo main .box-producto .text {
-    display: block;
-    padding: 30px;
+  .segundo main .container .box-producto img {
+    width: 145px;
+    height: 145px;
+    border-radius: 10px;
   }
-  .segundo main .box-producto .text img {
-    width: 160px;
-    height: 160px;
+  .segundo main .container .box-producto .text {
+    padding: 10px 30px;
+  }
+  .segundo footer {
+    padding-top: 30px;
   }
   .segundo footer h4 {
     font-size: 20px;
@@ -433,21 +504,23 @@
 /*Tercer html- carrito*/
 .compra {
   display: grid;
-  grid-template-columns: 18% 82%;
-  grid-template-rows: 110px 486px;
-  grid-template-areas: "header header" "nav section";
+  grid-template-columns: 100%;
+  grid-template-rows: 18% 100%;
+  grid-template-areas: "header" "section";
 }
 .compra header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(27, 79, 81);
+  background-color: black;
+  padding: 0px 60px;
 }
 .compra header h1 {
-  font-size: 40px;
-  padding-left: 40px;
-  line-height: 100px;
-  color: antiquewhite;
+  font-weight: 900;
+  font-size: 38px;
+  font-family: sans-serif;
+  line-height: 115px;
+  color: rgb(46, 153, 124);
   text-shadow: 3px 3px 10px rgb(0, 0, 0);
   animation-iteration-count: infinite;
   animation-delay: color;
@@ -455,23 +528,17 @@
   animation-name: marca;
 }
 @keyframes marca {
-  0% {
-    color: rgb(147, 19, 19);
-  }
   10% {
-    color: rgb(173, 106, 28);
+    color: rgb(104, 171, 193);
   }
-  40% {
-    color: rgb(195, 198, 36);
-  }
-  70% {
-    color: rgb(75, 180, 23);
-  }
-  90% {
+  30% {
     color: rgb(34, 119, 173);
   }
+  70% {
+    color: rgb(69, 70, 129);
+  }
   100% {
-    color: rgb(86, 36, 178);
+    color: rgb(46, 28, 126);
   }
 }
 .compra header .btn-header .list-btn {
@@ -479,41 +546,26 @@
   justify-content: first baseline;
 }
 .compra header .btn-header .list-btn .item-btn {
-  padding: 6px;
-  width: 160px;
-  color: antiquewhite;
-  background-color: rgb(71, 114, 124);
+  padding: 5px;
+  width: 130px;
   border-radius: 20px;
+  color: antiquewhite;
   text-align: center;
   list-style: none;
-  margin: 20px;
+  margin: 40px 20px;
   transition-duration: 0.8s;
 }
 .compra header .btn-header .list-btn .item-btn:hover {
-  background-color: rgb(12, 12, 12);
-  width: 170px;
+  background-color: rgb(71, 114, 124);
+  width: 150px;
 }
 .compra header .btn-header .list-btn .btn {
   text-decoration: none;
   color: aliceblue;
 }
-.compra nav {
-  grid-area: nav;
-  background-color: rgb(56, 104, 116);
-  text-align: center;
-}
-.compra nav .nav-list .item-nav {
-  width: 100%;
-  height: auto;
-  margin: 20px 0px;
-  padding: 27px 0px;
-  list-style: none;
-  background-color: rgba(10, 10, 10, 0.461);
-  border: 1px solid black;
-}
 .compra section {
   grid-area: section;
-  background-color: rgb(30, 59, 73);
+  background-image: linear-gradient(black, rgb(30, 59, 73));
   padding-top: 40px;
 }
 .compra section .container-pago {
@@ -521,12 +573,16 @@
   justify-content: space-evenly;
 }
 .compra section .container-pago .art-uno {
+  position: relative;
   padding: 25px 40px;
   background-color: rgb(56, 104, 116);
   border-radius: 10px;
   width: 300px;
-  height: 285px;
-  box-shadow: 4px 4px 20px black;
+  height: 300px;
+  box-shadow: 6px 6px 30px black;
+  transition-property: width, height, background-color;
+  transition-duration: 0.8s;
+  transition-timing-function: linear;
 }
 .compra section .container-pago .art-uno h2 {
   text-align: center;
@@ -537,12 +593,16 @@
   padding: 2px;
 }
 .compra section .container-pago .art-dos {
+  position: relative;
   padding: 25px 40px;
   background-color: rgb(56, 104, 116);
   border-radius: 10px;
   width: 300px;
-  height: 285px;
-  box-shadow: 4px 4px 20px black;
+  height: 300px;
+  box-shadow: 6px 6px 30px black;
+  transition-property: width, height, background-color;
+  transition-duration: 0.8s;
+  transition-timing-function: linear;
 }
 .compra section .container-pago .art-dos h2 {
   text-align: center;
@@ -573,58 +633,75 @@
   box-shadow: 4px 4px 20px black;
   background-color: rgb(71, 114, 124);
 }
+.compra section .container-pago .art-uno:hover,
+.compra section .container-pago .art-dos:hover {
+  width: 325px;
+  height: 300px;
+  background-color: rgb(19, 64, 88);
+}
 
 @media (max-width: 480px) {
   .compra {
+    display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% auto auto;
-    grid-template-areas: "header" "section" "nav";
+    grid-template-rows: 90px 30px 100%;
+    grid-template-areas: "header" "btn-header" "section";
   }
   .compra header {
-    display: flex;
-    justify-content: flex-start;
+    display: block;
+    padding: 0px;
   }
   .compra header h1 {
-    font-size: 28px;
-    padding-left: 10px;
-    line-height: 80px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
   }
-  .compra header .btn-header .list-btn {
-    display: block;
-    justify-content: none;
+  .compra .btn-header {
+    background-color: black;
   }
-  .compra header .btn-header .list-btn .item-btn {
-    padding: 2px;
-    width: 95px;
-    margin: 10px;
+  .compra .btn-header .list-btn {
+    display: flex;
+    justify-content: space-evenly;
   }
-  .compra nav .nav-list {
-    font-size: 16px;
+  .compra .btn-header .list-btn .item-btn {
+    padding: 5px;
+    width: 100px;
+    border-radius: 20px;
+    color: antiquewhite;
+    text-align: center;
+    list-style: none;
+    margin: 0px 10px;
+    transition-duration: 0.8s;
   }
-  .compra nav .nav-list .item-nav {
-    margin: 0px;
-    padding: 5px 0px;
+  .compra .btn-header .list-btn .item-btn:hover {
+    background-color: rgb(71, 114, 124);
+    width: 150px;
+  }
+  .compra .btn-header .list-btn .btn {
+    text-decoration: none;
+    color: aliceblue;
   }
   .compra section {
-    padding-top: 0px;
+    padding: 40px 55px;
   }
   .compra section .container-pago {
     display: block;
-    justify-content: none;
+    justify-content: center;
+    align-items: center;
   }
   .compra section .container-pago .art-uno {
-    padding: 0px;
-    border-radius: 0px;
-    width: 100%;
-    height: 315px;
-    box-shadow: none;
+    padding: 20px auto;
+    width: 240px;
   }
   .compra section .container-pago .art-dos {
-    padding: 0px;
-    border-radius: 0px;
-    width: 100%;
-    height: 285px;
-    box-shadow: none;
+    margin-top: 25px;
+    padding: 20px auto;
+    width: 240px;
+  }
+  .compra section .container-pago .art-uno:hover,
+  .compra section .container-pago .art-dos:hover {
+    width: 240px;
+    height: 320px;
   }
 }
 
