@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0%;
   margin: 0%;
@@ -6,7 +7,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 /*primer html - inicio*/
 .primer {
   background-color: rgba(31, 76, 88, 0.651);
@@ -567,19 +567,20 @@ html {
   grid-area: section;
   background-image: linear-gradient(black, rgb(30, 59, 73));
   padding-top: 40px;
+  position: relative;
+  overflow: hidden;
 }
 .compra section .container-pago {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .compra section .container-pago .art-uno {
   position: relative;
   padding: 25px 40px;
-  background-color: rgb(56, 104, 116);
-  border-radius: 10px;
+  background-color: rgba(42, 92, 104, 0.548);
+  box-shadow: 3px 3px 18px rgb(71, 114, 124);
   width: 300px;
   height: 300px;
-  box-shadow: 6px 6px 30px black;
   transition-property: width, height, background-color;
   transition-duration: 0.8s;
   transition-timing-function: linear;
@@ -595,11 +596,10 @@ html {
 .compra section .container-pago .art-dos {
   position: relative;
   padding: 25px 40px;
-  background-color: rgb(56, 104, 116);
-  border-radius: 10px;
+  background-color: rgba(42, 92, 104, 0.548);
+  box-shadow: 3px 3px 18px rgb(71, 114, 124);
   width: 300px;
   height: 300px;
-  box-shadow: 6px 6px 30px black;
   transition-property: width, height, background-color;
   transition-duration: 0.8s;
   transition-timing-function: linear;
@@ -633,11 +633,41 @@ html {
   box-shadow: 4px 4px 20px black;
   background-color: rgb(71, 114, 124);
 }
-.compra section .container-pago .art-uno:hover,
-.compra section .container-pago .art-dos:hover {
-  width: 325px;
-  height: 300px;
-  background-color: rgb(19, 64, 88);
+.compra section .container-pago .diseño-lg {
+  position: absolute;
+  left: 2;
+  width: 850px;
+  height: 500px;
+  background: linear-gradient(10deg, #89253e, #102c45);
+  animation: diseño 25s infinite;
+}
+@keyframes diseño {
+  0% {
+    transform: rotate(2deg) skewY(75deg);
+    transform-origin: 300px;
+  }
+  20% {
+    transform: rotate(40deg) skewY(-80deg);
+    transform-origin: 250px;
+    border-radius: 40% 10px;
+  }
+  40% {
+    transform: rotate(-40deg) skewY(80deg);
+    transform-origin: 190px;
+  }
+  60% {
+    transform: rotate(-10deg) skewY(40deg);
+    transform-origin: 350px;
+  }
+  80% {
+    transform: rotate(35deg) skewY(-90deg);
+    transform-origin: 300px;
+    border-radius: 10px 20%;
+  }
+  100% {
+    transform: rotate(27deg) skewY(20deg);
+    transform-origin: 40px;
+  }
 }
 
 @media (max-width: 480px) {
